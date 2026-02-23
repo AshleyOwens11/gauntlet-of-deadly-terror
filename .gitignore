@@ -4,6 +4,9 @@ Intermediate
 Saved
 .vscode
 .vs
+.idea
+.vsconfig
+.DotSettings.user
 *.VC.db
 *.opensdf
 *.opendb
