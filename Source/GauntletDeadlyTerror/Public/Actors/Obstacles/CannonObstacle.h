@@ -29,6 +29,9 @@ class GAUNTLETDEADLYTERROR_API ACannonObstacle : public AActor
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<class ACannonballObstacle> CannonballClass;
 	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+	float ShotTimer;
+	
 public:	
 	// Sets default values for this actor's properties
 	ACannonObstacle();
@@ -40,7 +43,5 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-private:
-	float ShotTimer;
+	
 };

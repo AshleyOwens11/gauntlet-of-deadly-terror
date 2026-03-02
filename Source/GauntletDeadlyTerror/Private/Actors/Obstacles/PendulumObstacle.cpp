@@ -23,6 +23,7 @@ APendulumObstacle::APendulumObstacle()
 	
 	Speed = 1.f;
 	Siner = 0.f;
+	MaxHeight = 60.f;
 }
 
 // Called when the game starts or when spawned
@@ -39,7 +40,7 @@ void APendulumObstacle::Tick(float DeltaTime)
 
 	Siner += DeltaTime;
 	
-	FRotator Rotation = UKismetMathLibrary::RLerp(FRotator(0.f), FRotator(0.f, 0.f, 60.f),  sin(Siner * Speed), true);
-	SetActorRotation(Rotation);
+	FRotator Rotation = UKismetMathLibrary::RLerp(FRotator(0.f), FRotator(0.f, 0.f, MaxHeight),  sin(Siner * Speed), true);
+	SetActorRelativeRotation(FRotator(GetActorRotation().Pitch, GetActorRotation().Yaw, Rotation.Roll));
 }
 
