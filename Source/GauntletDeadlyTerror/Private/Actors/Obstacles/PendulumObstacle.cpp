@@ -41,6 +41,6 @@ void APendulumObstacle::Tick(float DeltaTime)
 	Siner += DeltaTime;
 	
 	FRotator Rotation = UKismetMathLibrary::RLerp(FRotator(0.f), FRotator(0.f, 0.f, MaxHeight),  sin(Siner * Speed), true);
-	SetActorRelativeRotation(FRotator(GetActorRotation().Pitch, GetActorRotation().Yaw, Rotation.Roll));
+	//SetActorRelativeRotation(FRotator(GetActorRotation().Pitch, GetActorRotation().Yaw, Rotation.Roll));
 }
 
